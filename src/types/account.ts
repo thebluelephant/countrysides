@@ -12,4 +12,5 @@ export interface Account {
       lat : number,
       lon : number
     }
+    validated : boolean
   }

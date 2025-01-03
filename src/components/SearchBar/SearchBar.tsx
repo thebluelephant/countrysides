@@ -7,19 +7,22 @@ import { useMap } from 'react-leaflet';
 const SearchBar = () => {
     // @ts-ignore
     const searchControl = new GeoSearchControl({
-        provider: new OpenStreetMapProvider(),
+        provider: new OpenStreetMapProvider({
+            params: {
+                countrycodes: 'fr',
+            },
+        }),
         searchLabel: 'Rechercher une adresse, ville, ...',
         showMarker: false,
+        geocodingQueryParams: { countrycodes: 'fr' },
         classNames: {
             container: s.searchbarContainer,
             button: s.searchbarButton,
             resetButton: s.searchbarReset,
-            // msgbox: string;
             form: s.searchbarForm,
             input: s.searchbarInput,
-            //resultlist: s.searchbarResults,
             item: s.searchbarResult,
-            // notfound: string;
+
         }
     });
 

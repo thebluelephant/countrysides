@@ -4,6 +4,7 @@ import 'leaflet/dist/leaflet.css';
 import { GatheringPlace } from '../../types/gathering_place.ts';
 import { fetchGatheringPlaces, fetchAccountsFromGatheringPlaces } from '../../api/gathering_places.tsx';
 import { Account } from '../../types/account.ts';
+import s from './GatheringPlacesMarker.module.scss'
 
 
 
@@ -36,16 +37,30 @@ const GatheringPlacesMarker = () => {
             {
                 !!accountsList?.length && (
                     <Popup>
+                        <h3> Ils habitent dans le coin ({accountsList.length} utilisateurs)</h3>
                         {
-
                             accountsList.map((account) => {
                                 return (
-                                    <p key={account.id}>{account.id}</p>
-
+                                    <div className={s.accountBlock}>
+                                        {
+                                            account.validated ?
+                                                <>
+                                                    <b><p key={account.id}>{account.username}</p></b>
+                                                    {
+                                                        !!account.centers_of_interest.length &&
+                                                        <div className={s.coiBlocks}>
+                                                            {
+                                                                account.centers_of_interest.map((centerOfInterest) => <p>{centerOfInterest}</p>)
+                                                            }
+                                                        </div>
+                                                    }
+                                                </> :
+                                                <p>Profil en cours de validation</p>
+                                        }
+                                    </div>
                                 )
                             })
                         }
-
                     </Popup>)
             }
         </Marker>)

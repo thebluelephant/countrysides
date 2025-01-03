@@ -4,8 +4,6 @@ import 'leaflet/dist/leaflet.css';
 import { ODEvent } from '../../types/event.ts';
 import fetchEvents from '../../api/events.tsx';
 
-
-
 const EventMarker = () => {
     const [events, setEvents] = useState<ODEvent[]>();
 
@@ -20,7 +18,7 @@ const EventMarker = () => {
         return (<Marker
             key={event.uid}
             position={[lat, lon]}
-            icon={L.icon({ iconUrl: 'icon/map-od-event.svg' })}
+            icon={L.icon({ iconUrl: 'icon/map-event.svg' })}
         >
             <Popup>
                 <h3>{event?.title_fr}</h3>

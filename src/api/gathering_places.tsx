@@ -13,6 +13,7 @@ export const fetchGatheringPlaces = async () => {
 }
 
 export const fetchAccountsFromGatheringPlaces = async (accountIds: Pick<Account, 'id'>[]) => {
+    console.log(accountIds);
     const { data } = await supabase
         .from('account')
         .select()

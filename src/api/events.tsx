@@ -20,6 +20,20 @@ export const fetchUsersEvents = async () => {
         .select()
 
     return data
+}
+
+export const fetchEventsByInseeeCode = async (inseeCode: string) => {
+    const publicEvents = await supabase
+        .from('od_events')
+        .select()
+        .eq('location_insee', inseeCode)
+
+    const userEvents = await supabase
+        .from('event')
+        .select()
+        .eq('location_insee', inseeCode)
+
+    return Promise.all([publicEvents, userEvents]).then((values) => [...values[0].data, ...(values[1].data as ODEvent[])])
 
 }
 export default fetchEvents

@@ -8,6 +8,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { fetchAccountById } from './api/account.tsx'
 import { useAppContext } from './index.js'
 import PostRegistrationPopUp from './components/PostRegistrationPopUp/PostRegistrationPopUp.tsx';
+import LocalActuality from './components/LocalActuality/LocalActuality.tsx';
 
 function App() {
   const [showEventDetails, setShowEvenDetails] = useState();
@@ -30,14 +31,34 @@ function App() {
 
   return (
     <div className="App">
+      <div className="header">
+        {
+          account?.firstname && <p>👋 Bonjour {account.firstname} ! </p>
+        }
+
+        <LoginButton />
+      </div>
+
+
       {
-        isPopUpVisible && <PostRegistrationPopUp closePopUp={() => setIsPopUpVisible(false)} />
+        isAuthenticated &&
+        <>
+          {
+            isPopUpVisible && <PostRegistrationPopUp closePopUp={() => setIsPopUpVisible(false)} />
+          }
+
+          {
+            showEventDetails && <Popup eventDetails={showEventDetails} />
+          }
+          <div className="board">
+
+            <Map onEventClick={setShowEvenDetails} />
+            <LocalActuality />
+          </div>
+        </>
       }
-      <LoginButton />
-      {
-        showEventDetails && <Popup eventDetails={showEventDetails} />
-      }
-      <Map onEventClick={setShowEvenDetails} />
+
+
     </div>
   );
 }

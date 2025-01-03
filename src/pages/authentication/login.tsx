@@ -10,7 +10,7 @@ const LoginButton = () => {
             Déconnexion
         </button>)
     } else {
-        return <button className={s.loginButton} onClick={() => loginWithRedirect()}>Connexion</button>;
+        return <button className={s.loginButton} onClick={() => loginWithRedirect()}>Connexion / Inscription</button>;
     }
 };
 
