@@ -102,7 +102,7 @@ const SubmitEventPopup = () => {
                                 <span>
                                     <label htmlFor="address">Adresse</label>
                                     <Autocomplete
-                                        apiKey='AIzaSyCuB0bwTfF3399H5Zj-len7eUBU5h_7NvI'
+                                        apiKey={process.env.REACT_APP_GOOGLE_PLACES_API_KEY}
                                         onPlaceSelected={(place) => onPlaceSelection(place)}
                                         options={{
                                             types: ['address'],
