@@ -1,0 +1,31 @@
+.notification,
+.notification__animated {
+    background-color: rgba(247, 238, 255, 0.4901960784);
+    border-radius: 10px;
+    height: fit-content;
+    width: 300px;
+    position: absolute;
+    right: 15px;
+    bottom: -300px;
+    padding: 5px;
+    transition: all .3s ease-out;
+    box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.3);
+
+    p {
+        margin: 0
+    }
+
+    .content {
+        background-color: white;
+        display: flex;
+        align-items: flex-start;
+        gap: 15px;
+        padding: 15px;
+        border-radius: 10px;
+    }
+}
+
+.notification__animated {
+    transition: all .3s ease-out;
+    bottom: 10px;
+}

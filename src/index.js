@@ -8,9 +8,10 @@ const AppContext = createContext();
 
 const AppContextProvider = ({ children }) => {
   const [account, setAccount] = useState();
+  const [notification, setNotification] = useState({ type: '', content: '' });
 
   return (
-    <AppContext.Provider value={{ account, setAccount }}>
+    <AppContext.Provider value={{ account, setAccount, notification, setNotification }}>
       {children}
     </AppContext.Provider>
   );

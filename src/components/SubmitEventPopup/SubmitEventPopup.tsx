@@ -7,7 +7,7 @@ import Autocomplete from "react-google-autocomplete";
 import { getInseeCode } from '../../api/place.tsx';
 
 const SubmitEventPopup = () => {
-    const { account } = useAppContext();
+    const { setNotification, account } = useAppContext();
     const [error, setError] = useState<string>()
     const [showPopup, setShowPopup] = useState<boolean>(false)
     const [event, setEvent] = useState({
@@ -46,6 +46,7 @@ const SubmitEventPopup = () => {
                 author_id: account?.id
             }).then((resp) => {
                 if (resp === 201) {
+                    setNotification({ type: 'success', content: 'Evenement envoyé - Il sera publié une fois validé par nos modérateurs' })
                     setShowPopup(false)
                 }
             })

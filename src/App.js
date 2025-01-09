@@ -10,6 +10,7 @@ import { useAppContext } from './index.js'
 import PostRegistrationPopUp from './components/PostRegistrationPopUp/PostRegistrationPopUp.tsx';
 import LocalActuality from './components/LocalActuality/LocalActuality.tsx';
 import SubmitEventPopup from './components/SubmitEventPopup/SubmitEventPopup.tsx';
+import Notification from './components/Notification/Notification.tsx';
 
 function App() {
   const [showEventDetails, setShowEvenDetails] = useState();
@@ -32,6 +33,7 @@ function App() {
 
   return (
     <div className="App">
+      <Notification content={'Pouet'} />
       <div className="header">
         {
           account?.firstname && <p>👋 Bonjour {account.firstname} ! </p>
@@ -39,8 +41,6 @@ function App() {
 
         <LoginButton />
       </div>
-
-
       {
         isAuthenticated &&
         <>
@@ -58,8 +58,6 @@ function App() {
               <LocalActuality />
               <SubmitEventPopup />
             </span>
-
-
           </div>
         </>
       }
