@@ -1,20 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Marker, Popup } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css';
 import { ODEvent } from '../../types/event.ts';
-import fetchEvents from '../../api/events.tsx';
 import s from './EventMarker.module.scss'
 
-const EventMarker = () => {
-    const [events, setEvents] = useState<ODEvent[]>();
-
-
-    useEffect(() => {
-        fetchEvents().then((resp) => {
-            setEvents(resp)
-        })
-    }, []);
-
+type Props = {
+    events: ODEvent[] | undefined
+}
+const EventMarker = ({ events }: Props) => {
     return events?.map((event) => {
         const beginDate = new Date(event.firstdate_begin).toLocaleDateString("fr")
         const endDate = new Date(event.lastdate_end).toLocaleDateString("fr")

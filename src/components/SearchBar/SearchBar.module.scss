@@ -5,11 +5,40 @@
 }
 
 .searchbarInput {
-    width: 300px;
-    height: 30px;
+    width: 270px;
+    height: 25px;
     border-radius: 10px;
     padding: 0 10px;
-    border-color: #8A2FD5;
+    border: solid 1px #8A2FD5;
+}
+
+.dateFilter {
+    position: absolute;
+    left: 400px;
+    z-index: 5000;
+    top: 10px;
+    height: 25px;
+    border: solid 1px #8A2FD5;
+    border-radius: 10px;
+    padding: 0 10px;
+    cursor: pointer;
+    font-family: 'Roboto';
+}
+
+.resetFilterButton {
+    position: absolute;
+    left: 540px;
+    z-index: 5000;
+    top: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        height: 12px;
+    }
+
 }
 
 .searchbarResult {
@@ -28,12 +57,14 @@
     }
 }
 
-.searchbarReset {
+
+.searchbarReset,
+.resetFilterButton {
     background-color: white;
-    border-color: #8A2FD5;
-    border-radius: 25px;
-    height: 30px;
+    border: solid 1px #8A2FD5;
+    border-radius: 10px;
+    height: 25px;
     width: 30px;
-    margin-left: 10px;
+    margin-left: 5px;
     cursor: pointer;
 }

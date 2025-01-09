@@ -3,8 +3,12 @@ import s from './SearchBar.module.scss';
 import { GeoSearchControl, OpenStreetMapProvider } from 'leaflet-geosearch';
 import { useMap } from 'react-leaflet';
 
+type Props = {
+    onFilterOnDate: (date: any) => void
+    resetDateFilter: () => void
+}
 
-const SearchBar = () => {
+const SearchBar = ({ onFilterOnDate, resetDateFilter }: Props) => {
     // @ts-ignore
     const searchControl = new GeoSearchControl({
         provider: new OpenStreetMapProvider({
@@ -34,7 +38,16 @@ const SearchBar = () => {
     }, [map]);
 
 
-    return null
+    return (
+        <form>
+            <input type="date" className={s.dateFilter} onChange={(e) => onFilterOnDate(e.target.value)} />
+            <button className={s.resetFilterButton} onClick={() => resetDateFilter()} type='reset'>
+                <img src="icon/close.svg" alt="reset date filter icon" />
+            </button>
+
+        </form>
+
+    )
 }
 
 export default SearchBar
