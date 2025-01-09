@@ -9,26 +9,29 @@
     height: 25px;
     border-radius: 10px;
     padding: 0 10px;
-    border: solid 1px #8A2FD5;
+    border: transparent;
+    box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.3);
 }
 
 .dateFilter {
     position: absolute;
     left: 400px;
-    z-index: 5000;
+    z-index: 1000;
     top: 10px;
     height: 25px;
-    border: solid 1px #8A2FD5;
+    border: transparent;
     border-radius: 10px;
     padding: 0 10px;
     cursor: pointer;
     font-family: 'Roboto';
+    box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.3);
+    color: rgb(130, 129, 129);
 }
 
 .resetFilterButton {
     position: absolute;
     left: 540px;
-    z-index: 5000;
+    z-index: 400;
     top: 10px;
     cursor: pointer;
     display: flex;
@@ -61,10 +64,11 @@
 .searchbarReset,
 .resetFilterButton {
     background-color: white;
-    border: solid 1px #8A2FD5;
+    border: transparent;
     border-radius: 10px;
     height: 25px;
     width: 30px;
     margin-left: 5px;
     cursor: pointer;
+    box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.3);
 }
