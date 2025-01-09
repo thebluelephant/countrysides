@@ -1,0 +1,24 @@
+.eventPopUp {
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .title {
+            &:first-letter {
+                text-transform: capitalize;
+            }
+        }
+
+        p,
+        h3 {
+            margin: 0;
+        }
+
+        span {
+            display: flex;
+            align-items: baseline;
+        }
+    }
+}

@@ -12,11 +12,9 @@ export interface ODEvent {
     uid: string;
     slug: string;
     canonicalurl: string;
-    title_fr: string;
-    description_fr: string;
-    longdescription_fr: string;
-    conditions_fr: string | null;
-    keywords_fr: string[];
+    title: string;
+    description: string;
+    conditions: string | null;
     timings: EventTiming[];
     location_coordinates: LocationCoordinates;
     location_city: string;

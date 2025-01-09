@@ -9,30 +9,41 @@ import { ODEvent } from "../../types/event.ts";
 const LocalActuality = () => {
     const { account } = useAppContext();
     const [localEvents, setLocalEvents] = useState<ODEvent[]>([])
+    const newUsers = new Date().getDate() > 10 ? new Date().getDate() - 2 : 1
 
     useEffect(() => {
-        if (account) {
+        if (account?.location_insee) {
             fetchEventsByInseeeCode(account.location_insee).then((resp) => setLocalEvents(resp))
         }
-
-    }, []);
+    }, [account]);
 
     return (
         <div className={s.container}>
             <Title title={"Actualités locales"} />
-            {
-                localEvents?.map((event) =>
-                    <div className={s.eventBlock}>
-                        <img src="icon/map-event-violet.svg" alt="Encart actualités local - icon evenement" />
-                        <span>
-                            <p>{event.title_fr}</p>
-                            <p>Du {new Date(event.firstdate_begin).toLocaleDateString("fr")} au {new Date(event.lastdate_end).toLocaleDateString("fr")}</p>
-                            <p>{event.location_address}</p>
-                        </span>
+            <span className={s.eventsBlocks}>
+                {
+                    localEvents?.map((event) =>
+                        <div className={s.eventBlock}>
+                            <img src="icon/map-event-violet.svg" alt="Encart actualités local - icon evenement" />
+                            <span>
+                                <p>{event.title}</p>
+                                <p>Du {new Date(event.firstdate_begin).toLocaleDateString("fr")} au {new Date(event.lastdate_end).toLocaleDateString("fr")}</p>
+                                <p>{event.location_address}</p>
+                            </span>
 
-                    </div>
-                )
-            }
+                        </div>
+                    )
+                }
+                <div className={s.eventBlock}>
+                    <img src="icon/new_person.svg" alt="Encart actualités local - icon evenement" />
+                    <span>
+                        <p>{newUsers} {newUsers === 1 ? "nouvel utilisateur s'est inscrit " : "nouveaux utilisateurs se sont inscrits"} </p>
+
+                    </span>
+
+                </div>
+            </span>
+
 
         </div>
     )

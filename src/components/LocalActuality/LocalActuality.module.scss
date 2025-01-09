@@ -1,18 +1,22 @@
 .container {
-    width: 40%;
     height: fit-content;
     background-color: #f7eeff7d;
     border-radius: 10px;
     padding: 0 10px 10px 10px;
 
     .eventBlock {
-        background-color: #FFFFFF;
+        background-color: #ffffff8a;
         border-radius: 10px;
         padding: 15px;
         font-size: 13px;
         display: flex;
         align-items: flex-start;
         gap: 20px;
+        margin-bottom: 5px;
+
+        &:first-child {
+            background-color: white
+        }
 
         p {
             margin: 0;
@@ -21,5 +25,8 @@
         p:first-child {
             font-weight: bold;
         }
+
+
+
     }
 }

@@ -6,8 +6,6 @@ import { fetchGatheringPlaces, fetchAccountsFromGatheringPlaces } from '../../ap
 import { Account } from '../../types/account.ts';
 import s from './GatheringPlacesMarker.module.scss'
 
-
-
 const GatheringPlacesMarker = () => {
     const [gatheringPlace, setGatheringPlace] = useState<GatheringPlace[]>();
     const [accountsList, setAccountsList] = useState<Account[]>();
@@ -30,7 +28,6 @@ const GatheringPlacesMarker = () => {
                     fetchAccountsFromGatheringPlaces(gp.accounts).then((accounts) => {
                         setAccountsList(accounts)
                     })
-                    //  onEventClick(event)
                 },
             }}
         >

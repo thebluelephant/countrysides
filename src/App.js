@@ -9,6 +9,7 @@ import { fetchAccountById } from './api/account.tsx'
 import { useAppContext } from './index.js'
 import PostRegistrationPopUp from './components/PostRegistrationPopUp/PostRegistrationPopUp.tsx';
 import LocalActuality from './components/LocalActuality/LocalActuality.tsx';
+import SubmitEventPopup from './components/SubmitEventPopup/SubmitEventPopup.tsx';
 
 function App() {
   const [showEventDetails, setShowEvenDetails] = useState();
@@ -53,7 +54,12 @@ function App() {
           <div className="board">
 
             <Map onEventClick={setShowEvenDetails} />
-            <LocalActuality />
+            <span className="board__right">
+              <LocalActuality />
+              <SubmitEventPopup />
+            </span>
+
+
           </div>
         </>
       }

@@ -10,7 +10,6 @@ type Props = {
     closePopUp: () => void
 }
 const PostRegistrationPopUp = ({ closePopUp }: Props) => {
-
     const { account } = useAppContext();
     const [showErrorMessage, seShowErrorMessage] = useState(false);
     const [cities, setCities] = useState();

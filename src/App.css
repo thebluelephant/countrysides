@@ -8,6 +8,7 @@
     padding: 10px;
     display: flex;
     flex-direction: column;
+    justify-content: end;
 
     background: rgb(206, 152, 196);
     background: -moz-linear-gradient(56deg, rgba(206, 152, 196, 1) 0%, rgba(148, 173, 242, 1) 52%, rgba(180, 247, 255, 1) 100%);
@@ -15,6 +16,7 @@
     background: linear-gradient(56deg, rgba(206, 152, 196, 1) 0%, rgba(148, 173, 242, 1) 52%, rgba(180, 247, 255, 1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ce98c4", endColorstr="#b4f7ff", GradientType=1);
     font-family: 'Roboto';
+
 }
 
 .header {
@@ -32,4 +34,11 @@
     height: 95%;
     display: flex;
     gap: 15px;
+}
+
+.board__right {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 30%;
 }

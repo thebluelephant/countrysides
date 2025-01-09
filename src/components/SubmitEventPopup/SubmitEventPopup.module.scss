@@ -1,0 +1,79 @@
+.proposeActivityButton,
+.submitButton {
+    cursor: pointer;
+    width: fit-content;
+    height: 25px;
+    border-radius: 5px;
+    color: white;
+    background-color: #892FD5;
+    border: transparent;
+
+    &:disabled {
+        background-color: lightgrey;
+        cursor: initial;
+    }
+}
+
+.submitButton {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.formActivityContainer {
+    height: 100vh;
+    width: 100vw;
+    background: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    top: 0;
+    z-index: 3000;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    .popUp {
+        height: 500px;
+        width: 500px;
+        background-color: white;
+        border-radius: 10px;
+        padding: 20px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        img {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            cursor: pointer;
+        }
+
+        &__form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            span {
+                display: flex;
+                flex-direction: column;
+            }
+
+            label {
+                font-size: 15px;
+                color: #626060;
+                margin-bottom: 3px;
+            }
+
+            input {
+                border-radius: 5px;
+                border: 1px solid #d6d6d6;
+                height: 25px;
+                padding: 0 5px;
+            }
+        }
+    }
+}
