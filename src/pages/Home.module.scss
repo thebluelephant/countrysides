@@ -1,0 +1,16 @@
+.home {
+    display: flex;
+    height: 100%;
+    gap: 20px;
+}
+
+.boardLeft {
+    flex: 1;
+}
+
+.boardRight {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}

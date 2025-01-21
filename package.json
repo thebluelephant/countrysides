@@ -43,6 +43,7 @@
     ]
   },
   "devDependencies": {
-    "@types/leaflet": "^1.9.14"
+    "@types/leaflet": "^1.9.14",
+    "react-router-dom": "^7.1.3"
   }
 }

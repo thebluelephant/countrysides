@@ -1,0 +1,22 @@
+.layout {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    font-family: 'Roboto';
+}
+
+.header {
+    display: flex;
+    height: 50px;
+}
+
+.header p:first-child {
+    font-size: 25px;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+.body {
+    height: calc(100vh - 70px);
+}

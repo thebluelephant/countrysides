@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import s from './Title.module.scss';
 
 type Props = {

@@ -26,8 +26,7 @@ const Map = () => {
 
 
     return (
-
-        <div className={s.container}>
+        <div className={s.mapContainer}>
             <MapContainer center={[47.0833, 2.4]} zoom={7} scrollWheelZoom={true} className={s.map}>
                 <SearchBar onFilterOnDate={filterEventsThroughDate} resetDateFilter={() => setFilteredEvents(null)} />
                 <TileLayer
@@ -38,6 +37,7 @@ const Map = () => {
                 <GatheringPlacesMarker />
             </MapContainer>
         </div>
+
     );
 }
 
