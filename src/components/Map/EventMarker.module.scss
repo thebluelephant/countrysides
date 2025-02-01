@@ -1,5 +1,7 @@
 .eventPopUp {
 
+
+
     .content {
         display: flex;
         flex-direction: column;
@@ -19,6 +21,26 @@
         span {
             display: flex;
             align-items: baseline;
+        }
+
+        .participationButton {
+            cursor: pointer;
+            height: 25px;
+            border-radius: 5px;
+            color: white;
+            background-color: #F98C61;
+            border: transparent;
+            padding: 0 10px;
+        }
+
+        .participants {
+            border-top: solid 1px lightgray;
+            padding: 15px 0;
+            border-bottom: solid 1px lightgray;
+
+            b {
+                font-family: 'Jaldi-bold';
+            }
         }
     }
 }

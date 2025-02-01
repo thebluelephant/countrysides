@@ -54,7 +54,7 @@ const PostRegistrationPopUp = ({ closePopUp }: Props) => {
         setFoundedCities([])
     }
     return (
-        (account && !account.username) &&
+        (account && !account.location_insee) &&
         <div className={s.popupContainer}>
             <div className={s.popup}>
                 <Title title="Bienvenue sur Countrysides !" />

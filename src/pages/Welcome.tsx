@@ -7,23 +7,18 @@ function Welcome() {
     const { loginWithPopup } = useAuth0();
 
     return (
-        <div>
-            <span className={s.identityBlock}>
-                <img className={s.logo} src="images/welcome-logo.png" alt="logo" />
-                <p className={s.slogan}>Le réseau social des territoires</p>
-            </span>
+        <div className={s.welcome}>
+            <span className={s.connexion}>
+                <button onClick={() => loginWithPopup()}>Connexion</button>
 
-            <span className={s.connectionBlock}>
-                <p className={s.slogan}>Avec Countrysides, créez, participez et animez la vie de votre territoire.</p>
-                <span className={s.buttons}>
-                    <button>Inscription</button>
-                    <button onClick={() => loginWithPopup()}>Connexion</button>
+            </span>
+            <span className={s.signin}>
+                <span className={s.block}>
+                    <p className={s.slogan}>Créez, participez et animez la vie de votre territoire.</p>
+                    <button onClick={() => loginWithPopup()}>Commencer</button>
                 </span>
             </span>
-
-            <img className={s.vector1} src="images/welcome-vector1.png" alt="vector image" />
-            <img className={s.vector2} src="images/welcome-vector2.png" alt="vector image" />
-            <img className={s.backgroundImage} src="images/welcome-image1.jpg" alt="welcome page font image" />
+            <img className={s.welcomeImage} src="images/welcome.png" alt="welcome image" />
         </div >
     );
 }

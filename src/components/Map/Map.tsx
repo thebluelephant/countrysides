@@ -12,7 +12,6 @@ const Map = () => {
     const [events, setEvents] = useState<ODEvent[]>();
     const [filteredEvents, setFilteredEvents] = useState<ODEvent[] | null>();
 
-
     useEffect(() => {
         fetchEvents().then((resp) => {
             setEvents(resp)
